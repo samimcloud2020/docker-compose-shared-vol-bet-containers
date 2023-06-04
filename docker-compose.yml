@@ -23,7 +23,7 @@ services:
         networks:
           - 'net1'    
         volumes:
-          - 'vol1:/app/public'      
+          - 'vol1:/app/public'      #if VOLUME ["/app/public"] in Dockerfile not defined , then in docker-compose.yml
 networks:
   net1: 
     driver: bridge
