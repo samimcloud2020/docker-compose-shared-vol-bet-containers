@@ -1,0 +1,13 @@
+if in Dockerfile not define VOLUME ["/app/public"]
+
+$docker run -itd -p 5000:5000 --rm --name web2 -v $PWD:/app -v /app/public --rm -e FLASK_APP=app.py -e FLASK_DEBUG=1 image1
+
+$ docker run -itd -p 6379:6379 --rm --name redis $PWD:/data redis:alpine
+
+
+
+if VOLUME ["/app/public"] define in Dockerfile then 
+
+$docker run -itd -p 5000:5000 --rm --name web2 -v $PWD:/app  --rm -e FLASK_APP=app.py -e FLASK_DEBUG=1 image1
+
+$ docker run -itd -p 6379:6379 --rm --name redis $PWD:/data redis:alpine
